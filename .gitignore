@@ -1,0 +1,18 @@
+# Local configuration
+.env
+.env.*
+!.env.example
+db.local.php
+
+# Editor settings
+.vscode/
+.idea/
+nbproject/private/
+
+# Logs and system files
+*.log
+.DS_Store
+Thumbs.db
+
+# Archives
+*.zip

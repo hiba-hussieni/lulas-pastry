@@ -1,0 +1,246 @@
+/* ==============================
+   LULA'S PASTRY - Main Theme
+   ============================== */
+
+:root{
+  --bg: #F8E0E0;
+  --white: #FFFFFF;
+  --primary: #C07860;     /* copper */
+  --secondary: #E0B0A0;   /* peach */
+  --border: #D09880;      /* warm beige */
+  --gray: #9898A0;
+  --dark-gray: #808888;
+}
+
+/* Basic reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Error text small */
+.error{
+  color: #b00020;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* =====================================
+   Customer Login - New Layout (Inspired)
+   ===================================== */
+
+body{
+  background-color: #F8E6DE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 10px;
+}
+
+/* Background Pattern */
+.background-pattern{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image:
+    radial-gradient(#C58B78 2px, transparent 2px),
+    radial-gradient(#E4B7A0 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+/* Watermark */
+.logo-watermark{
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  color: rgba(197, 139, 120, 0.25);
+  z-index: 2;
+}
+
+.logo-watermark span{
+  color: rgba(155, 107, 90, 0.25);
+}
+
+/* Login Container */
+.login-container{
+  width: 90%;
+  max-width: 1000px;
+  background: #FFFDFB;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(155, 107, 90, 0.15);
+  display: flex;
+  z-index: 3;
+}
+
+/* Left side */
+.welcome-side{
+  flex: 1;
+  background: linear-gradient(135deg, #F8E6DE 0%, #FFFDFB 100%);
+  padding: 60px 40px;
+  text-align: center;
+  border-right: 1px solid rgba(197, 139, 120, 0.1);
+}
+
+.welcome-side h1{
+  font-size: 32px;
+  color: #5D4037;
+  margin-bottom: 10px;
+}
+
+.welcome-side p{
+  color: #9B6B5A;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 auto 20px auto;
+  max-width: 300px;
+}
+
+/* Logo */
+.logo-big{
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+/* Feature List */
+.feature-list{
+  text-align: left;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.feature-item{
+  margin: 10px 0;
+  color: #9B6B5A;
+}
+
+/* Right side */
+.login-side{
+  flex: 1;
+  padding: 60px 50px;
+  background: #FFFDFB;
+}
+
+.login-header{
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.login-header h2{
+  font-size: 28px;
+  color: #5D4037;
+  margin-bottom: 10px;
+}
+
+.login-header p{
+  color: #9B6B5A;
+  font-size: 14px;
+}
+
+/* Inputs */
+.input-box{
+  margin-bottom: 18px;
+}
+
+.input-box label{
+  display: block;
+  margin-bottom: 8px;
+  color: #5D4037;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input-box input{
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #F8E6DE;
+  border-radius: 12px;
+  background: #FFFDFB;
+  font-size: 15px;
+  color: #5D4037;
+}
+
+.input-box input:focus{
+  border-color: #C58B78;
+  outline: none;
+}
+
+/* Buttons */
+.btn-primary{
+  width: 100%;
+  padding: 16px;
+  background: #C58B78;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+
+.btn-primary:hover{
+  background: #E4B7A0;
+}
+
+.back-link{
+  text-align: center;
+  margin-top: 18px;
+}
+
+.back-link a{
+  color: #C58B78;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back-link a:hover{
+  text-decoration: underline;
+}
+
+/* Error message */
+.error-box{
+  background: rgba(176, 0, 32, 0.08);
+  color: #b00020;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.cake-icon {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cake-icon i {
+    font-size: 120px;
+    color: #C58B78;
+    display: inline-block;
+}
+
+
+/* Responsive */
+@media (max-width: 800px){
+  .login-container{
+    flex-direction: column;
+  }
+  .welcome-side{
+    border-right: none;
+    border-bottom: 1px solid rgba(197, 139, 120, 0.1);
+  }
+}
