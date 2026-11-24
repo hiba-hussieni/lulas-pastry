@@ -1,3 +1,11 @@
+-- Lula's Pastry: clean portfolio demonstration database
+-- All customer identities, contact details and order delivery details are fictional.
+-- Original product data, table structure, record IDs and relationships are preserved.
+-- Passwords for the synthetic accounts are stored as bcrypt hashes.
+-- Customer demo login: customer_demo / LulasCustomerDemo2026!
+-- Chef demo login: chef.demo@example.com / LulasChefDemo2026!
+-- Import once into an EMPTY database. No CREATE DATABASE or USE statement is included.
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
@@ -18,7 +26,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lulas_pastry_challenge`
+-- Import into the empty database selected in phpMyAdmin.
 --
 
 -- --------------------------------------------------------
@@ -163,22 +171,22 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `order_number`, `user_id`, `total_amount`, `status`, `payment_method`, `payment_status`, `order_date`, `delivery_date`, `special_instructions`, `delivery_address`, `customer_phone`, `delivery_cost`, `stock_deducted`) VALUES
-(1, 'ORD-1766832223', 5, 180.00, 'cancelled', NULL, 'pending', '2026-09-27 09:43:43', NULL, '', NULL, NULL, 4.00, 0),
-(2, 'ORD-1766832259', 5, 40.00, 'confirmed', NULL, 'pending', '2026-09-27 09:44:19', NULL, '', NULL, NULL, 4.00, 0),
-(3, 'ORD1766833507', 5, 45.00, 'confirmed', 'cash', 'pending', '2026-09-27 10:05:07', '2026-09-29 00:00:00', 'add extra pistachio', NULL, NULL, 4.00, 0),
-(4, 'ORD1766833827', 5, 20.00, 'confirmed', 'cash', 'pending', '2026-09-27 10:10:27', '2026-09-29 00:00:00', 'extra pistachio', NULL, NULL, 4.00, 0),
-(5, '', 5, 24.00, 'cancelled', 'cash', 'pending', '2026-09-27 12:52:14', '2026-09-27 15:52:14', 'extra nuts', 'baalback', '76123404', 4.00, 0),
-(9, 'ORD-1766845741-177', 5, 164.00, 'cancelled', 'card', 'pending', '2026-09-27 13:29:01', '2026-09-27 16:29:01', 'extra sweet', 'baalback', '76123404', 4.00, 0),
-(11, 'ORD-1767182827-531', 6, 64.00, 'delivered', 'cash', 'pending', '2026-09-29 11:07:07', '2026-09-29 14:07:07', 'extra white chocloate', 'baalback', '76123404', 4.00, 0),
-(12, 'ORD-BF95703EA9ACA16E', 3, 34.00, 'pending', 'cash', 'pending', '2026-09-27 20:58:48', '2026-09-27 23:58:48', '', 'baalback', '76098765', 4.00, 0),
-(13, 'ORD-1AEE8864FB807B93', 3, 4.52, 'pending', 'card', 'pending', '2026-09-28 08:24:52', '2026-09-29 00:00:00', '', 'baalback', '76098765', 4.00, 0),
-(14, 'ORD-B16E3AD0375F80E2', 3, 164.00, 'pending', 'card', 'pending', '2026-09-28 13:57:55', '2026-09-28 16:57:55', '', 'beirut', '76123404', 4.00, 0),
-(15, 'ORD-413967219BB1CAB1', 3, 164.00, 'pending', 'cash', 'pending', '2026-09-28 14:11:49', '2026-09-28 17:11:49', '', 'amyoun', '03510410', 4.00, 0),
-(16, 'ORD-2A97CA065D021860', 3, 84.00, 'pending', 'cash', 'pending', '2026-09-28 14:13:46', '2026-09-28 17:13:46', 'extra chocolate', 'koura-mainstreet', '78675435', 4.00, 0),
-(17, 'ORD-F095BC82EB45FCBF', 3, 164.00, 'cancelled', 'cash', 'pending', '2026-09-28 18:37:41', '2026-09-28 21:37:41', '', 'tripoli', '81267834', 4.00, 0),
-(18, 'ORD-6FACD5F479BA68CC', 4, 164.00, 'cancelled', 'card', 'pending', '2026-09-28 18:52:02', '2026-09-28 21:52:02', 'extra nuts', 'Dahye', '71450965', 4.00, 0),
-(19, 'ORD-B54094918CCB3CBA', 4, 64.00, 'pending', 'cash', 'pending', '2026-09-28 21:28:03', '2026-09-29 00:28:03', '', 'Zahle', '76506412', 4.00, 1),
-(20, 'ORD-C7E05EAB880F0119', 10, 89.00, 'pending', 'cash', 'pending', '2026-09-29 07:05:33', '2026-09-29 10:05:33', '', 'zouk-mousbeh', '03675409', 4.00, 1);
+(1, 'ORD-1766832223', 5, 180.00, 'cancelled', NULL, 'pending', '2026-09-27 09:43:43', NULL, 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(2, 'ORD-1766832259', 5, 40.00, 'confirmed', NULL, 'pending', '2026-09-27 09:44:19', NULL, 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(3, 'ORD1766833507', 5, 45.00, 'confirmed', 'cash', 'pending', '2026-09-27 10:05:07', '2026-09-29 00:00:00', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(4, 'ORD1766833827', 5, 20.00, 'confirmed', 'cash', 'pending', '2026-09-27 10:10:27', '2026-09-29 00:00:00', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(5, '', 5, 24.00, 'cancelled', 'cash', 'pending', '2026-09-27 12:52:14', '2026-09-27 15:52:14', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(9, 'ORD-1766845741-177', 5, 164.00, 'cancelled', 'card', 'pending', '2026-09-27 13:29:01', '2026-09-27 16:29:01', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(11, 'ORD-1767182827-531', 6, 64.00, 'delivered', 'cash', 'pending', '2026-09-29 11:07:07', '2026-09-29 14:07:07', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(12, 'ORD-BF95703EA9ACA16E', 3, 34.00, 'pending', 'cash', 'pending', '2026-09-27 20:58:48', '2026-09-27 23:58:48', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(13, 'ORD-1AEE8864FB807B93', 3, 4.52, 'pending', 'card', 'pending', '2026-09-28 08:24:52', '2026-09-29 00:00:00', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(14, 'ORD-B16E3AD0375F80E2', 3, 164.00, 'pending', 'card', 'pending', '2026-09-28 13:57:55', '2026-09-28 16:57:55', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(15, 'ORD-413967219BB1CAB1', 3, 164.00, 'pending', 'cash', 'pending', '2026-09-28 14:11:49', '2026-09-28 17:11:49', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(16, 'ORD-2A97CA065D021860', 3, 84.00, 'pending', 'cash', 'pending', '2026-09-28 14:13:46', '2026-09-28 17:13:46', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(17, 'ORD-F095BC82EB45FCBF', 3, 164.00, 'cancelled', 'cash', 'pending', '2026-09-28 18:37:41', '2026-09-28 21:37:41', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(18, 'ORD-6FACD5F479BA68CC', 4, 164.00, 'cancelled', 'card', 'pending', '2026-09-28 18:52:02', '2026-09-28 21:52:02', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 0),
+(19, 'ORD-B54094918CCB3CBA', 4, 64.00, 'pending', 'cash', 'pending', '2026-09-28 21:28:03', '2026-09-29 00:28:03', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 1),
+(20, 'ORD-C7E05EAB880F0119', 10, 89.00, 'pending', 'cash', 'pending', '2026-09-29 07:05:33', '2026-09-29 10:05:33', 'Portfolio demonstration order', 'Demo Street, Sample City', '00000000', 4.00, 1);
 
 -- --------------------------------------------------------
 
@@ -240,16 +248,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `user_type`, `full_name`, `phone`, `address`, `created_at`) VALUES
-(1, 'chef_ahmed', 'ahmed@lulas.com', '$2y$10$jnAHNKM9h0b0Xq.kspf4CewLt9AKejK8IfT7toY4PTDlHTY.6eQU6', 'chef', 'Ahmed Hassan', '01012345678', NULL, '2026-09-24 17:59:58'),
-(2, 'chef_mariam', 'mariam@lulas.com', '$2y$10$YourHashedPasswordHere', 'chef', 'Mariam Ali', '01087654321', NULL, '2026-09-24 17:59:58'),
-(3, 'customer1', 'customer1@example.com', '$2y$10$YourHashedPasswordHere', 'customer', 'John Doe', '01011112222', NULL, '2026-09-24 17:59:58'),
-(4, 'customer2', 'customer2@example.com', '$2y$10$YourHashedPasswordHere', 'customer', 'Jane Smith', '01033334444', NULL, '2026-09-24 17:59:58'),
-(5, 'testcustomer', 'test@example.com', 'test123', 'customer', 'Test Customer', NULL, NULL, '2026-09-24 18:51:14'),
-(6, 'Hiba', 'hibahussieni@gmail.com', '$2y$10$4QY98.2l5ZMbcC6bsd0lyegNO4hCfs7S5AIt0eTPGP8Fl9i3TLH6C', 'customer', 'Hiba', NULL, NULL, '2026-09-29 08:55:59'),
-(7, 'Haidar', 'Haidar@gmail.com', '$2y$10$FhmGwkmNejq2WBeKWGlCG.aWA70ArPVyHXMswRh2K/qyPgifU6a46', 'customer', 'Haidar', NULL, NULL, '2026-09-29 09:00:20'),
-(9, 'Banine', 'Banine@gmail.com', '$2y$10$k9RjPmP8.xu44QKzPXmFYuzvM53dYI1tN0VoMvmSK.UZLZ5fYlyi2', 'customer', 'Banine', NULL, NULL, '2026-09-29 11:07:59'),
-(10, 'jana', 'jana@gmail.com', '$2y$10$nfyOum9/7Yzb6l1PjphX0elvo7R.zqq4f3B4cGcNcLXTINLWbjlZa', 'customer', 'jana', NULL, NULL, '2026-09-29 06:51:17'),
-(11, 'lea', 'leahaidar@gmail.com', '$2y$10$21Il7S4QaFsKhn7/sbHv5.nSvo0aRQ4XNnuoT1DMXbPs.C7Lw95l2', 'customer', 'lea', NULL, NULL, '2026-09-29 07:31:53');
+(1, 'chef_demo', 'chef.demo@example.com', '$2y$10$iLh/BxugGaILROIIrqTOWOK9q.XV8a45vXhrznm6tLusi1YeX5A.G', 'chef', 'Demo Chef', NULL, NULL, '2026-01-01 12:00:00'),
+(2, 'chef_demo_2', 'chef.demo.2@example.com', '$2y$10$iLh/BxugGaILROIIrqTOWOK9q.XV8a45vXhrznm6tLusi1YeX5A.G', 'chef', 'Demo Chef 2', NULL, NULL, '2026-01-01 12:00:00'),
+(3, 'customer_demo', 'customer.demo@example.com', '$2y$10$WMLR1nrLjcHn57aOSzeOcucMttBW6B/pW2mQlScUnkSiUDONr/xdC', 'customer', 'Demo Customer 3', NULL, NULL, '2026-01-01 12:00:00'),
+(4, 'customer_demo_4', 'customer.demo.4@example.com', '$2y$10$WMLR1nrLjcHn57aOSzeOcucMttBW6B/pW2mQlScUnkSiUDONr/xdC', 'customer', 'Demo Customer 4', NULL, NULL, '2026-01-01 12:00:00'),
+(5, 'customer_demo_5', 'customer.demo.5@example.com', '$2y$10$WMLR1nrLjcHn57aOSzeOcucMttBW6B/pW2mQlScUnkSiUDONr/xdC', 'customer', 'Demo Customer 5', NULL, NULL, '2026-01-01 12:00:00'),
+(6, 'customer_demo_6', 'customer.demo.6@example.com', '$2y$10$WMLR1nrLjcHn57aOSzeOcucMttBW6B/pW2mQlScUnkSiUDONr/xdC', 'customer', 'Demo Customer 6', NULL, NULL, '2026-01-01 12:00:00'),
+(7, 'customer_demo_7', 'customer.demo.7@example.com', '$2y$10$WMLR1nrLjcHn57aOSzeOcucMttBW6B/pW2mQlScUnkSiUDONr/xdC', 'customer', 'Demo Customer 7', NULL, NULL, '2026-01-01 12:00:00'),
+(9, 'customer_demo_9', 'customer.demo.9@example.com', '$2y$10$WMLR1nrLjcHn57aOSzeOcucMttBW6B/pW2mQlScUnkSiUDONr/xdC', 'customer', 'Demo Customer 9', NULL, NULL, '2026-01-01 12:00:00'),
+(10, 'customer_demo_10', 'customer.demo.10@example.com', '$2y$10$WMLR1nrLjcHn57aOSzeOcucMttBW6B/pW2mQlScUnkSiUDONr/xdC', 'customer', 'Demo Customer 10', NULL, NULL, '2026-01-01 12:00:00'),
+(11, 'customer_demo_11', 'customer.demo.11@example.com', '$2y$10$WMLR1nrLjcHn57aOSzeOcucMttBW6B/pW2mQlScUnkSiUDONr/xdC', 'customer', 'Demo Customer 11', NULL, NULL, '2026-01-01 12:00:00');
 
 --
 -- Indexes for dumped tables
