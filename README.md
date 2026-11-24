@@ -7,6 +7,10 @@ A pastry ordering and shop management application built with PHP, MySQL/MariaDB,
 
 Customers can browse products, manage their cart, and place orders. A separate Chef/Admin interface supports product, category, stock, and order management.
 
+**[Open the live demo](https://lulas-pastry-demo.rf.gd/)** · **[View the source code](https://github.com/hiba-hussieni/lulas-pastry)**
+
+The hosted version is a portfolio demonstration using synthetic account and order-contact data. It does not process real payments or arrange deliveries.
+
 ## Features
 
 ### Customer
@@ -36,6 +40,7 @@ Payment status tracking is part of the application; it does not by itself repres
 - **Database:** MySQL / MariaDB
 - **Local environment:** XAMPP, Apache, phpMyAdmin
 - **UI resources:** Font Awesome and Google Fonts
+- **Demo hosting:** InfinityFree with PHP, MySQL, and HTTPS
 
 ## Main Project Files
 
@@ -150,10 +155,12 @@ After importing the supplied demonstration database:
 
 | Role | Login | Password |
 | --- | --- | --- |
-| Chef/Admin | `ahmed@lulas.com` | `12345` |
-| Customer | `jana` | `jana123` |
+| Customer | `customer_demo` | `LulasCustomerDemo2026!` |
+| Chef/Admin | `chef.demo@example.com` | `LulasChefDemo2026!` |
 
-These credentials are intentionally provided for local testing only. The included accounts and saved records are fictional demonstration data.
+These credentials are intentionally provided for portfolio demonstration and local testing. Customer login accepts the listed username; Chef/Admin login uses the listed email address.
+
+Use fictional information when trying checkout or registration. Shared demo data may change as visitors interact with the application.
 
 ## Suggested Demo Flow
 
@@ -178,7 +185,7 @@ These credentials are intentionally provided for local testing only. The include
 6. Open an order and update its status.
 7. Log out.
 
-Changes made during the demo are saved in the local database.
+Changes made during a demo are saved in the database connected to that instance.
 
 ## Database
 
@@ -198,17 +205,31 @@ Foreign keys connect users, products, categories, orders, and delivery records.
 
 The application uses PHP sessions and separate customer and Chef/Admin login flows.
 
-The login handlers support password hashes and also accept legacy plaintext demo passwords, upgrading them to hashes after a successful login. New customer registrations use password hashing.
+The supplied synthetic demo accounts use bcrypt password hashes. New customer registrations use PHP password hashing.
 
-This is a local challenge and portfolio project. Authentication and other security controls require further review before production deployment.
+The existing login handlers retain compatibility with legacy plaintext passwords and upgrade them after successful authentication. The supplied demo dataset does not require that fallback.
+
+This is a challenge and portfolio demonstration. A production storefront would require a separate security review and operational configuration.
 
 ## Verification Status
 
-The application was used and tested locally during development.
+Deployment checks on **24 November 2026**:
 
-The portfolio copy includes database connection configuration changes. A fresh end-to-end check of this copy after importing the demonstration database is still pending.
+- The hosted home page and customer login page loaded over HTTPS.
+- All seven tables were imported into the hosted demonstration database.
+- Customer sign-in, product browsing, and adding a product to the cart were confirmed through the deployed interface.
+- The project owner reported successful cart quantity updates and checkout testing.
+- The SQL file in this repository was checked against the synthetic dataset used for deployment.
 
-No automated test suite or production security audit is claimed.
+These are manual checks of the customer flow, not a complete regression or production security audit. No automated test suite is claimed.
+
+## Hosted Configuration
+
+The live demo uses server-specific database configuration. Database passwords are not included in this repository.
+
+For local development, follow the installation steps above. The repository's `db.php` supports environment variables; the deployed copy also reads a server-only `db.local.php` file. That file is excluded from Git.
+
+Do not place SQL exports or development diagnostic files in the public web directory.
 
 ## Troubleshooting
 
@@ -232,6 +253,6 @@ No automated test suite or production security audit is claimed.
 
 ## Scope
 
-This project demonstrates customer ordering and shop administration in a local PHP application.
+This project demonstrates customer ordering and shop administration with a PHP backend and relational database.
 
-Publishing the source on GitHub does not host the running application. Running it requires PHP and a compatible database server.
+The live demo is hosted separately from GitHub. Running another instance requires a PHP server, the PDO MySQL extension, and a compatible database. It is a portfolio demonstration rather than an operational pastry shop.
